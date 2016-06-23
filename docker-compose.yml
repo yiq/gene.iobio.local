@@ -1,16 +1,66 @@
 version: '2'
 services:
   nginx:
-    image: stable-alpine
+    image: nginx:stable-alpine
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - "nginx/nginx.conf:/etc/nginx/nginx.conf:ro"
-      - "nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf:ro"
-      - "gene.iobio:/usr/share/nginx/html:ro"
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/services.d:/etc/nginx/services.d:ro
+      - ./gene.iobio:/usr/share/nginx/html:ro
     depends_on:
+      - geneinfo
+      - gene2pheno
+      - hpo
+      - coverage
+      - od_samtools
+      - freebayes
+      - vcflib
+      - vt
+      - od_tabix
+      - vcfdepther
       - af
+      - vep
+      - ctgapndr
 
+  geneinfo:
+    image: qiaoy/iobio.geneinfo
+    volumes:
+      - ./data-vol/geneinfo:/home/iobio/workdir/geneinfo:ro
+  gene2pheno:
+    image: qiaoy/iobio.gene2pheno
+    volumes:
+      - ./data-vol/gene2pheno:/home/iobio/workdir/gene2pheno:ro
+  hpo:
+    image: qiaoy/iobio.hpo
+    volumes:
+      - ./data-vol/hpo:/home/iobio/workdir/hpo:ro
+  coverage:
+    image: qiaoy/iobio.coverage
+  od_samtools:
+    image: qiaoy/iobio.samtools_od
+  freebayes:
+    image: qiaoy/iobio.freebayes
+    volumes:
+      - ./data-vol/data:/home/iobio/workdir/data:ro
+  vcflib:
+    image: qiaoy/iobio.vcflib
+  vt:
+    image: qiaoy/iobio.vt
+    volumes:
+      - ./data-vol/data:/home/iobio/workdir/data:ro
+  od_tabix:
+    image: qiaoy/iobio.tabix_od
+  vcfdepther:
+    image: qiaoy/iobio.vcfdepther
   af:
     image: qiaoy/iobio.af
+    volumes:
+      - ./data-vol/afdata:/home/iobio/workdir/afdata:ro
+  vep:
+    image: qiaoy/iobio.vep
+    volumes:
+      - ./data-vol/vep-cache:/home/iobio/workdir/vep-cache:ro
+  ctgapndr:
+    image: qiaoy/iobio.ctgapndr
