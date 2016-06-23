@@ -1,4 +1,5 @@
 [submodule "gene.iobio"]
 	path = gene.iobio
 	url = https://github.com/tonydisera/gene.iobio
-	branch = gh-pages
+    branch = gh-pages
+    ignore = dirty

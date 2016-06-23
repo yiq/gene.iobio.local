@@ -4,7 +4,7 @@ fetch_gz() {
     if [ ! -e data-vol/.${1}.fetched ]; then
         echo "Fetching ${1}"
         curl -L\# https://s3.amazonaws.com/iobio/assets/data-vol/v1.0/${1}.tar.gz | tar -C data-vol -xzf -
-        touch data-vol/.${1}.fetched
+        if [ $? -eq 0 ]; then touch data-vol/.${1}.fetched; fi
     fi
 }
 
@@ -12,7 +12,7 @@ fetch_bz2() {
     if [ ! -e data-vol/.${1}.fetched ]; then
         echo "Fetching ${1}"
         curl -L\# https://s3.amazonaws.com/iobio/assets/data-vol/v1.0/${1}.tar.bz2 | tar -C data-vol -xjf -
-        touch data-vol/.${1}.fetched
+        if [ $? -eq 0 ]; then touch data-vol/.${1}.fetched; fi
     fi
 }
 
