@@ -3,6 +3,10 @@ Locally installed gene.iobio
 
 This repository contains scripts and config files for locally deploy gene.iobio on any docker-enabled servers
 
+# Prerequisites
+  * Docker 1.11.2  [install doc](https://docs.docker.com/engine/installation/linux/)
+  * docker-compose 1.7.1  [install doc](https://docs.docker.com/compose/install/)
+
 # Getting Started
 To get started, you need to have a hostname assigned to your server so that both the server and the clients can resolve to the same ip address. This is because iobio applications make websocket connections to the underlying services running on the server, and the services themselves also make connections to other services. Hostnames such as 'localhost' has different meanings on the client, and in different service containers, making it unsuitable even for testing purpose.
 
