@@ -22,5 +22,6 @@ fetch_gz geneinfo
 fetch_gz hpo
 fetch_gz ref
 fetch_bz2 vep-cache
+fetch_gz local_cache
 
 

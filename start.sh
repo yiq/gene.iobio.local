@@ -10,5 +10,7 @@ if [ -z $1 ]; then
     exit 0
 fi
 
-cd gene.iobio && git reset --hard && git apply <(cat ../endpoint.diff.tmpl | sed "s/@hostname@/$1/g")
+rm -rf gene.iobio/local_cache
+cp -r data-vol/local_cache gene.iobio/
+cat globalsDeployment.js.tmpl | sed "s/@hostname@/$1/g" > gene.iobio/app/globalsDeployment.js
 docker-compose up -d
