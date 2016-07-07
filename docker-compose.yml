@@ -9,6 +9,7 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/services.d:/etc/nginx/services.d:ro
       - ./gene.iobio:/usr/share/nginx/html:ro
+      - ./data-vol/local_cache:/usr/share/nginx/html/local_cache:ro
     depends_on:
       - geneinfo
       - gene2pheno
