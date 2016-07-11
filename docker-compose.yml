@@ -15,52 +15,58 @@ services:
       - hpo
       - coverage
       - od_samtools
+      - samtools
       - freebayes
       - vcflib
       - vt
       - od_tabix
+      - tabix
       - vcfdepther
       - af
       - vep
       - ctgapndr
 
   geneinfo:
-    image: qiaoy/iobio.geneinfo
+    image: qiaoy/iobio.geneinfo:v1.0
     volumes:
       - ./data-vol/geneinfo:/home/iobio/workdir/geneinfo:ro
   gene2pheno:
-    image: qiaoy/iobio.gene2pheno
+    image: qiaoy/iobio.gene2pheno:v1.0
     volumes:
       - ./data-vol/gene2pheno:/home/iobio/workdir/gene2pheno:ro
   hpo:
-    image: qiaoy/iobio.hpo
+    image: qiaoy/iobio.hpo:v1.0
     volumes:
       - ./data-vol/hpo:/home/iobio/workdir/hpo:ro
   coverage:
-    image: qiaoy/iobio.coverage
+    image: qiaoy/iobio.coverage:v1.0
   od_samtools:
-    image: qiaoy/iobio.samtools_od
+    image: qiaoy/iobio.samtools_od:v1.0
+  samtools:
+    image: qiaoy/iobio.samtools:v1.0
   freebayes:
-    image: qiaoy/iobio.freebayes
+    image: qiaoy/iobio.freebayes:v1.0
     volumes:
       - ./data-vol/data:/home/iobio/workdir/data:ro
   vcflib:
-    image: qiaoy/iobio.vcflib
+    image: qiaoy/iobio.vcflib:v1.0
   vt:
-    image: qiaoy/iobio.vt
+    image: qiaoy/iobio.vt:v1.0
     volumes:
       - ./data-vol/data:/home/iobio/workdir/data:ro
   od_tabix:
-    image: qiaoy/iobio.tabix_od
+    image: qiaoy/iobio.tabix_od:v1.0
+  tabix:
+    image: qiaoy/iobio.tabix:v1.0
   vcfdepther:
-    image: qiaoy/iobio.vcfdepther
+    image: qiaoy/iobio.vcfdepther:v1.0
   af:
-    image: qiaoy/iobio.af
+    image: qiaoy/iobio.af:v1.0
     volumes:
       - ./data-vol/afdata:/home/iobio/workdir/afdata:ro
   vep:
-    image: qiaoy/iobio.vep
+    image: qiaoy/iobio.vep:v1.0
     volumes:
       - ./data-vol/vep-cache:/home/iobio/workdir/vep-cache:ro
   ctgapndr:
-    image: qiaoy/iobio.ctgapndr
+    image: qiaoy/iobio.ctgapndr:v1.0
