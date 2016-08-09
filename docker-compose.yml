@@ -46,7 +46,7 @@ services:
   od_samtools:
     image: qiaoy/iobio.samtools_od:v2.2
   samtools:
-    image: qiaoy/iobio.samtools_od:v2.2
+    image: qiaoy/iobio.samtools:v2.2
   bcftools:
     image: qiaoy/iobio.bcftools:v2.2
   freebayes:
@@ -62,7 +62,7 @@ services:
   od_tabix:
     image: qiaoy/iobio.tabix_od:v2.2
   tabix:
-    image: qiaoy/iobio.tabix_od:v2.2
+    image: qiaoy/iobio.tabix:v2.2
   vcfdepther:
     image: qiaoy/iobio.vcfdepther:v2.2
   af:
