@@ -28,6 +28,7 @@ services:
       - af
       - vep
       - phenolyzer
+      - email
 
   geneinfo:
     image: qiaoy/iobio.geneinfo:v1.0
@@ -75,3 +76,7 @@ services:
       - ./data-vol/vep-cache:/home/iobio/workdir/vep-cache:ro
   phenolyzer:
     image: qiaoy/iobio.phenolyzer
+  email:
+    image: qiaoy/iobio.email-server
+    volumes:
+      - ./emailServer.ini:/home/iobio/workdir/emailServer.ini:ro
