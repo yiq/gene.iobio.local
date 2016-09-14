@@ -1,5 +1,5 @@
 [submodule "gene.iobio"]
 	path = gene.iobio
 	url = https://github.com/tonydisera/gene.iobio
-	branch = exhibit
+	branch = dev 
     ignore = dirty
