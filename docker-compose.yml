@@ -8,6 +8,8 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/services.d:/etc/nginx/services.d:ro
+      - ./nginx/snake-oil-server.crt:/etc/nginx/server.crt:ro
+      - ./nginx/snake-oil-server.key:/etc/nginx/server.key:ro
       - ./gene.iobio:/usr/share/nginx/gene.iobio:ro
       - ./data-vol/local_cache:/usr/share/nginx/local_cache:ro
       - /mnt/gene-data:/usr/share/nginx/data:ro
