@@ -25,7 +25,7 @@ Once everything starts up, open a browser on your client machine, and go to `htt
 
 ## Explaination
 ### Line (1)
-Some of the backend services requires data files such as the human reference. This script will download all the required data volumes and uncompress them into $REPO/data-vol. These data volumes will then be mapped into the docker containers.
+Some of the backend services require data files such as the human reference. This script will download all the required data volumes and uncompress them into $REPO/data-vol. These data volumes will then be mapped into the docker containers.
 
 ### Line (2)
 Download all the needed docker images manually instead of let docker-compose handle it. This can also be used to update images when newer versions are released in the future.
