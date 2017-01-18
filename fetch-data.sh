@@ -11,6 +11,7 @@ fetch() {
 fetch afdata
 fetch gene2pheno
 fetch geneinfo
+fetch genomebuild
 fetch hpo
 fetch ref
 fetch vep-cache

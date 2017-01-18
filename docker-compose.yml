@@ -34,7 +34,7 @@ services:
       - email
 
   geneinfo:
-    image: qiaoy/iobio.geneinfo:v1.0
+    image: qiaoy/iobio.geneinfo:v2.3
     volumes:
       - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
       - ./data-vol/geneinfo:/home/iobio/workdir/geneinfo:ro
@@ -43,6 +43,11 @@ services:
     volumes:
       - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
       - ./data-vol/gene2pheno:/home/iobio/workdir/gene2pheno:ro
+  genomebuild:
+    image: qiaoy/genomebuild:v2.3
+    volumes:
+      - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
+      - ./data-vol/genomebuild:/home/iobio/workdir/genomebuild:ro
   hpo:
     image: qiaoy/iobio.hpo:v1.0
     volumes:
@@ -91,17 +96,17 @@ services:
     volumes:
       - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
   af:
-    image: qiaoy/iobio.af:v2.3
+    image: qiaoy/iobio.af:v2.3.1
     volumes:
       - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
       - ./data-vol/afdata:/home/iobio/workdir/afdata:ro
   vep:
-    image: qiaoy/iobio.vep:v2.3
+    image: qiaoy/iobio.vep:v2.3.1
     volumes:
       - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
       - ./data-vol/vep-cache:/home/iobio/workdir/vep-cache:ro
   phenolyzer:
-    image: qiaoy/iobio.phenolyzer
+    image: qiaoy/iobio.phenolyzer:v2.3
     volumes:
       - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
   email:
