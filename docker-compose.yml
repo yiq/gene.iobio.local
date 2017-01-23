@@ -44,7 +44,7 @@ services:
       - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
       - ./data-vol/gene2pheno:/home/iobio/workdir/gene2pheno:ro
   genomebuild:
-    image: qiaoy/genomebuild:v2.3
+    image: qiaoy/iobio.genomebuild:v2.3
     volumes:
       - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
       - ./data-vol/genomebuild:/home/iobio/workdir/genomebuild:ro
