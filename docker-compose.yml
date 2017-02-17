@@ -105,6 +105,7 @@ services:
     volumes:
       - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
       - ./data-vol/vep-cache:/home/iobio/workdir/vep-cache:ro
+      - ./data-vol/data:/home/iobio/workdir/data:ro
   phenolyzer:
     image: qiaoy/iobio.phenolyzer:v2.3
     volumes:
