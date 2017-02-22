@@ -15,6 +15,7 @@ nginx:
   links:
     - geneinfo
     - gene2pheno
+    - genomebuild
     - hpo
     - coverage
     - od_samtools
