@@ -5,7 +5,7 @@ This repository contains scripts and config files for locally deploy gene.iobio 
 
 # Prerequisites
   * Docker 1.7.1 or newer  [install doc](https://docs.docker.com/engine/installation/linux/)
-  * docker-compose 1.4.1 or newer [install doc](https://docs.docker.com/compose/install/)
+  * docker-compose 1.4.2 or newer [install doc](https://docs.docker.com/compose/install/)
   * 60G free disk space
 
 # Getting Started
