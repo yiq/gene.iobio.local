@@ -2,7 +2,7 @@
     with for a local deployment.  This entire .js can be replaced or modified to suit the 
     specific iobio deployment environment.
 */
-var version               = "2.0.0";
+var version               = "2.5";
 
 var isOffline             = false;          // is there any internet connect to outside services and resources?
 var isClinvarOffline      = false;          // is clinvar offline?  (Pull from clinvar hosted from URL?)
@@ -15,9 +15,6 @@ var serverCacheDir        = "local_cache/"; // this is the directory from the se
 var serverDataDir         = "local_cache/"; // this is the directory from the server instance where data files will be served
 var offlineUrlTag         = "site:"         // this is the first part if the vcf/bam URL that indicates that a special URL should be constructed to get to files served from the local isntance
 
-var autoCall              = null;           // if only alignments are provided, should variants automatically be called? 
- 											// set to null if app should prompt first before autocalling
-
 var useSSL                = false;
 var useServerCache        = false;
 
@@ -25,6 +22,21 @@ var useServerCache        = false;
 var mygene2Endpoint       = "";
 var mygene2XAuthToken     = "";
 
+
+// Get clinvar annotations from 'eutils' or 'vcf'
+var clinvarSource        = "vcf";
+
+// Allow freebayes runtime args to be set by user
+var allowFreebayesSettings  = false;
+
+// get hgvs, rsid annotation for all variants
+var global_getVariantIdsForGene = false;
+
+// How many genes can be analyzed in one session.  Set to null if no limitation.
+var global_maxGeneCount         = 100;
+
+// Should vep retrieve allele frequencies (for gnomad, 1000G, ESP)
+var global_vepAF                = false;
 
 /*
 * This variable controls special behavior for running gene.iobio education edition, with
@@ -47,7 +59,8 @@ var feedbackEmails              = "gene.iobio.feedback@gmail.com";  // what emai
 var feedbackAttachScreenCapture = false;          // should the feedback include a screen capture?
 var feedbackShowURL             = false;         // show the feedback email show the URL that launched gene.iobio?
 
+var autocall              = null       // If only alignments provided, should variants be automatically called when gene is selected?
 
 
 var siteGeneSource        = isMygene2 ? "refseq" : "gencode";      // what should the gene source default to: refseq or gencode?
-var DEFAULT_BATCH_SIZE    = 1;              // how many genes can be analyzed simultaneously for 'Analyze all'
+var DEFAULT_BATCH_SIZE    = 5;              // how many genes can be analyzed simultaneously for 'Analyze all'
