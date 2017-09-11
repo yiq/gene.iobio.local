@@ -15,12 +15,14 @@ nginx:
   links:
     - geneinfo
     - gene2pheno
+    - genecoverage
     - genomebuild
     - hpo
     - coverage
     - od_samtools
     - samtools
     - bcftools
+    - knownvariants
     - freebayes
     - vcflib
     - vt
