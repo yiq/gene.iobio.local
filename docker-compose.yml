@@ -42,6 +42,10 @@ gene2pheno:
   volumes:
     - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
     - ./data-vol/gene2pheno:/home/iobio/workdir/gene2pheno:ro
+genecoverage:
+  image: qiaoy/iobio.genecoverage:v2.3
+  volumes:
+    - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
 genomebuild:
   image: qiaoy/iobio.genomebuild:v2.3
   volumes:
@@ -54,6 +58,10 @@ hpo:
     - ./data-vol/hpo:/home/iobio/workdir/hpo:ro
 coverage:
   image: qiaoy/iobio.coverage:v2.3
+  volumes:
+    - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
+knownvariants:
+  image: qiaoy/iobio.knownvariants:v2.3
   volumes:
     - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
 od_samtools:
