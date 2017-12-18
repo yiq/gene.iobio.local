@@ -57,11 +57,11 @@ coverage:
   volumes:
     - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
 od_samtools:
-  image: qiaoy/iobio.samtools_od:v2.3
+  image: qiaoy/iobio.samtools_od:v2.3.3
   volumes:
     - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
 samtools:
-  image: qiaoy/iobio.samtools:v2.3
+  image: qiaoy/iobio.samtools:v2.3.1
   volumes:
     - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
 bcftools:
@@ -83,11 +83,11 @@ vt:
     - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
     - ./data-vol/data:/home/iobio/workdir/data:ro
 od_tabix:
-  image: qiaoy/iobio.tabix_od:v2.3
+  image: qiaoy/iobio.tabix_od:v2.3.3
   volumes:
     - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
 tabix:
-  image: qiaoy/iobio.tabix:v2.3
+  image: qiaoy/iobio.tabix:v2.3.1
   volumes:
     - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
 vcfdepther:
@@ -100,7 +100,7 @@ af:
     - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
     - ./data-vol/afdata:/home/iobio/workdir/afdata:ro
 vep:
-  image: qiaoy/iobio.vep:v2.3.1
+  image: qiaoy/iobio.vep:v2.4
   volumes:
     - ./ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
     - ./data-vol/vep-cache:/home/iobio/workdir/vep-cache:ro
